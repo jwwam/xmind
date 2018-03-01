@@ -1,0 +1,223 @@
+/*
+ * jQuery FlexSlider v2.6.1
+ * http://www.woothemes.com/flexslider/
+ *
+ * Copyright 2012 WooThemes
+ * Free to use under the GPLv2 and later license.
+ * http://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * Contributing author: Tyler Smith (@mbmufffin)
+ *
+ */
+/* ====================================================================================================================
+ * FONT-FACE
+ * ====================================================================================================================*/
+@font-face {
+  font-family: 'flexslider-icon';
+  src: url('fonts/flexslider-icon.eot');
+  src: url('fonts/flexslider-icon.eot?#iefix') format('embedded-opentype'), url('fonts/flexslider-icon.woff') format('woff'), url('fonts/flexslider-icon.ttf') format('truetype'), url('fonts/flexslider-icon.svg#flexslider-icon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* ====================================================================================================================
+ * RESETS
+ * ====================================================================================================================*/
+.flex-container a:hover,
+.flex-slider a:hover {
+  outline: none;
+}
+.slides,
+.slides > li,
+.flex-control-nav,
+.flex-direction-nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.flex-pauseplay span {
+  text-transform: capitalize;
+}
+/* ====================================================================================================================
+ * BASE STYLES
+ * ====================================================================================================================*/
+.flexslider {
+  margin: 0;
+  padding: 0;
+}
+.flexslider .slides > li {
+  display: none;
+  -webkit-backface-visibility: hidden;
+}
+.flexslider .slides img {
+  width: 100%;
+  display: block;
+}
+.flexslider .slides:after {
+  content: "\0020";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+html[xmlns] .flexslider .slides {
+  display: block;
+}
+* html .flexslider .slides {
+  height: 1%;
+}
+.no-js .flexslider .slides > li:first-child {
+  display: block;
+}
+/* ====================================================================================================================
+ * DEFAULT THEME
+ * ====================================================================================================================*/
+ section.slider{
+	 position:relative;
+ }
+.flexslider {
+	margin: 0; 
+	zoom: 1;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-shadow: '' 0 1px 4px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: '' 0 1px 4px rgba(0, 0, 0, 0.2);
+	-o-box-shadow: '' 0 1px 4px rgba(0, 0, 0, 0.2);
+	box-shadow: '' 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+.flexslider .slides {
+	zoom: 1;
+}
+.flexslider .slides img {
+	height: auto;
+	-moz-user-select: none;
+}
+.flex-viewport {
+	max-height: 2000px;
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-ms-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	transition: all 1s ease;
+}
+.loading .flex-viewport {
+	max-height: 300px;
+}
+.carousel li {
+	margin-right: 5px;
+} 
+.flex-direction-nav a {
+    text-decoration: none;
+    display: block;
+    position: absolute;
+    top: 42%;
+    left: 6%;
+    z-index: 10;
+    color: #fff;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    font-size: 0;
+}
+.flex-direction-nav a:before {
+	font-size: 60px;
+    display: block;
+    content: "\f104"; 
+    font-family: FontAwesome;
+    line-height: 47px;
+}
+.flex-direction-nav a:hover {
+	-webkit-transform: scale(1.5);
+	-moz-transform: scale(1.5);
+	-o-transform: scale(1.5);
+	-ms-transform: scale(1.5);
+    transform: scale(1.5);
+}
+.flex-direction-nav .flex-next {
+    right: 6%;
+    left: inherit;
+}
+.flex-direction-nav a.flex-next:before {
+    font-size: 60px;
+    display: block;
+    content: "\f105"; 
+    font-family: FontAwesome;
+    line-height: 47px;
+}
+.flex-control-nav {
+    width: 100%;
+    position: absolute;
+    bottom: -73%;
+    text-align: center;
+	display:none;
+}
+.flex-control-nav li {
+	margin: 0 6px;
+	display: inline-block;
+	zoom: 1; 
+}
+  
+/* ====================================================================================================================
+ * RESPONSIVE
+ * ====================================================================================================================*/
+ 
+@media screen and (max-width: 1920px) { 
+	.flex-direction-nav a {
+		top: 51%;
+	}	
+}
+@media screen and (max-width: 1680px) { 
+	.flex-direction-nav a {
+		top: 45%;
+	}
+}
+@media screen and (max-width: 1366px) { 
+	.flex-direction-nav a {
+		top: 46%;
+	}
+}
+@media screen and (max-width: 1280px) { 
+	.flex-direction-nav a { 
+		top: 43%; 
+	}
+}
+@media screen and (max-width: 1050px) {
+	.flex-direction-nav a {
+		top: 45%;
+	}
+}
+@media screen and (max-width: 991px) {
+	.flex-direction-nav a { 
+		left: 3%; 
+	}
+	.flex-direction-nav .flex-next {
+		right: 3%; 
+	} 
+}
+@media screen and (max-width: 800px) {
+.flex-direction-nav a {
+    top: 47%;
+}
+}
+@media screen and (max-width: 767px) {
+.flex-direction-nav a.flex-next:before,.flex-direction-nav a:before {
+		font-size: 45px;
+}	
+} 
+@media screen and (max-width: 480px) {
+ .flex-direction-nav a.flex-next:before, .flex-direction-nav a:before {
+		font-size: 34px;
+	}
+}
+@media screen and (max-width: 414px) {
+.flex-direction-nav a:before ,.flex-direction-nav a.flex-next:before{
+    font-size: 28px; 
+	line-height: 38px;
+} 
+.flex-control-nav {
+    bottom: -32%;
+}
+}

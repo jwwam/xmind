@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xmind.dao.ThumbnailsMapper">
+  <resultMap id="BaseResultMap" type="com.xmind.entity.Thumbnails">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="idname" jdbcType="VARCHAR" property="idname" />
+    <result column="thumbnails_url" jdbcType="VARCHAR" property="thumbnailsUrl" />
+    <result column="key_name" jdbcType="VARCHAR" property="keyName" />
+    <result column="bucket" jdbcType="VARCHAR" property="bucket" />
+    <result column="map_id" jdbcType="BIGINT" property="mapId" />
+    <result column="size" jdbcType="VARCHAR" property="size" />
+    <result column="bak1" jdbcType="VARCHAR" property="bak1" />
+    <result column="bak2" jdbcType="VARCHAR" property="bak2" />
+    <result column="bak3" jdbcType="VARCHAR" property="bak3" />
+  </resultMap>
+  <resultMap id="Page" type="com.xmind.utils.PageBean">
+  	<result column="pageNo" jdbcType="INTEGER" property="pageNo" />
+    <result column="pageSize" jdbcType="INTEGER" property="pageSize" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, idname, thumbnails_url, key_name, bucket, map_id, size, bak1, bak2, bak3
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_thumbnails
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="getAllThumbnails" resultMap="BaseResultMap"> 
+  	select * from t_thumbnails <!-- order by receivedAt desc -->
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_thumbnails
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.xmind.entity.Thumbnails">
+    insert into t_thumbnails (id, idname, thumbnails_url, 
+      key_name, bucket, map_id, 
+      size, bak1, bak2, bak3
+      )
+    values (#{id,jdbcType=BIGINT}, #{idname,jdbcType=VARCHAR}, #{thumbnailsUrl,jdbcType=VARCHAR}, 
+      #{keyName,jdbcType=VARCHAR}, #{bucket,jdbcType=VARCHAR}, #{mapId,jdbcType=BIGINT}, 
+      #{size,jdbcType=VARCHAR}, #{bak1,jdbcType=VARCHAR}, #{bak2,jdbcType=VARCHAR}, #{bak3,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xmind.entity.Thumbnails">
+    insert into t_thumbnails
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="idname != null">
+        idname,
+      </if>
+      <if test="thumbnailsUrl != null">
+        thumbnails_url,
+      </if>
+      <if test="keyName != null">
+        key_name,
+      </if>
+      <if test="bucket != null">
+        bucket,
+      </if>
+      <if test="mapId != null">
+        map_id,
+      </if>
+      <if test="size != null">
+        size,
+      </if>
+      <if test="bak1 != null">
+        bak1,
+      </if>
+      <if test="bak2 != null">
+        bak2,
+      </if>
+      <if test="bak3 != null">
+        bak3,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="idname != null">
+        #{idname,jdbcType=VARCHAR},
+      </if>
+      <if test="thumbnailsUrl != null">
+        #{thumbnailsUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="keyName != null">
+        #{keyName,jdbcType=VARCHAR},
+      </if>
+      <if test="bucket != null">
+        #{bucket,jdbcType=VARCHAR},
+      </if>
+      <if test="mapId != null">
+        #{mapId,jdbcType=BIGINT},
+      </if>
+      <if test="size != null">
+        #{size,jdbcType=VARCHAR},
+      </if>
+      <if test="bak1 != null">
+        #{bak1,jdbcType=VARCHAR},
+      </if>
+      <if test="bak2 != null">
+        #{bak2,jdbcType=VARCHAR},
+      </if>
+      <if test="bak3 != null">
+        #{bak3,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xmind.entity.Thumbnails">
+    update t_thumbnails
+    <set>
+      <if test="idname != null">
+        idname = #{idname,jdbcType=VARCHAR},
+      </if>
+      <if test="thumbnailsUrl != null">
+        thumbnails_url = #{thumbnailsUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="keyName != null">
+        key_name = #{keyName,jdbcType=VARCHAR},
+      </if>
+      <if test="bucket != null">
+        bucket = #{bucket,jdbcType=VARCHAR},
+      </if>
+      <if test="mapId != null">
+        map_id = #{mapId,jdbcType=BIGINT},
+      </if>
+      <if test="size != null">
+        size = #{size,jdbcType=VARCHAR},
+      </if>
+      <if test="bak1 != null">
+        bak1 = #{bak1,jdbcType=VARCHAR},
+      </if>
+      <if test="bak2 != null">
+        bak2 = #{bak2,jdbcType=VARCHAR},
+      </if>
+      <if test="bak3 != null">
+        bak3 = #{bak3,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xmind.entity.Thumbnails">
+    update t_thumbnails
+    set idname = #{idname,jdbcType=VARCHAR},
+      thumbnails_url = #{thumbnailsUrl,jdbcType=VARCHAR},
+      key_name = #{keyName,jdbcType=VARCHAR},
+      bucket = #{bucket,jdbcType=VARCHAR},
+      map_id = #{mapId,jdbcType=BIGINT},
+      size = #{size,jdbcType=VARCHAR},
+      bak1 = #{bak1,jdbcType=VARCHAR},
+      bak2 = #{bak2,jdbcType=VARCHAR},
+      bak3 = #{bak3,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

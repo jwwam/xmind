@@ -1,0 +1,240 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.xmind</groupId>
+  <artifactId>xmind</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>syslog Maven Webapp</name>
+  <!-- 用来设置版本号 -->    
+    <properties>    
+        <srping.version>4.0.2.RELEASE</srping.version>    
+        <mybatis.version>3.2.8</mybatis.version>    
+        <slf4j.version>1.7.12</slf4j.version>    
+        <log4j.version>1.2.17</log4j.version>    
+    </properties>
+       
+  <dependencies>
+  	
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
+    <!-- java ee包 --> 
+       
+        <dependency>    
+            <groupId>javax</groupId>    
+            <artifactId>javaee-api</artifactId>    
+            <version>7.0</version>    
+        </dependency>    
+        <!-- spring框架包 start -->    
+        <dependency>    
+            <groupId>org.springframework</groupId>    
+            <artifactId>spring-test</artifactId>    
+            <version>${srping.version}</version>    
+        </dependency>    
+        <dependency>    
+            <groupId>org.springframework</groupId>    
+            <artifactId>spring-core</artifactId>    
+            <version>${srping.version}</version>    
+        </dependency>    
+        <dependency>    
+            <groupId>org.springframework</groupId>    
+            <artifactId>spring-oxm</artifactId>    
+            <version>${srping.version}</version>    
+        </dependency>    
+        <dependency>    
+            <groupId>org.springframework</groupId>    
+            <artifactId>spring-tx</artifactId>    
+            <version>${srping.version}</version>    
+        </dependency>    
+        <dependency>    
+            <groupId>org.springframework</groupId>    
+            <artifactId>spring-jdbc</artifactId>    
+            <version>${srping.version}</version>    
+        </dependency>    
+        <dependency>    
+            <groupId>org.springframework</groupId>    
+            <artifactId>spring-aop</artifactId>    
+            <version>${srping.version}</version>    
+        </dependency>    
+        <dependency>    
+            <groupId>org.springframework</groupId>    
+            <artifactId>spring-context</artifactId>    
+            <version>${srping.version}</version>    
+        </dependency>    
+        <dependency>    
+            <groupId>org.springframework</groupId>    
+            <artifactId>spring-context-support</artifactId>    
+            <version>${srping.version}</version>    
+        </dependency>    
+        <dependency>    
+            <groupId>org.springframework</groupId>    
+            <artifactId>spring-expression</artifactId>    
+            <version>${srping.version}</version>    
+        </dependency>    
+        <dependency>    
+            <groupId>org.springframework</groupId>    
+            <artifactId>spring-orm</artifactId>    
+            <version>${srping.version}</version>    
+        </dependency>    
+        <dependency>    
+            <groupId>org.springframework</groupId>    
+            <artifactId>spring-web</artifactId>    
+            <version>${srping.version}</version>    
+        </dependency>    
+        <dependency>    
+            <groupId>org.springframework</groupId>    
+            <artifactId>spring-webmvc</artifactId>    
+            <version>${srping.version}</version>    
+        </dependency>    
+        <!-- spring框架包 end -->    
+        <!-- mybatis框架包 start -->    
+        <dependency>    
+            <groupId>org.mybatis</groupId>    
+            <artifactId>mybatis</artifactId>    
+            <version>${mybatis.version}</version>    
+        </dependency>    
+        <dependency>    
+            <groupId>org.mybatis</groupId>    
+            <artifactId>mybatis-spring</artifactId>    
+            <version>1.2.2</version>    
+        </dependency>    
+        <!-- mybatis框架包 end -->    
+        <!-- 数据库驱动 -->    
+        <dependency>    
+            <groupId>mysql</groupId>    
+            <artifactId>mysql-connector-java</artifactId>    
+            <version>5.1.35</version>    
+        </dependency>    
+        <!-- 导入dbcp的jar包，用来在applicationContext.xml中配置数据库 -->    
+        <dependency>    
+            <groupId>commons-dbcp</groupId>    
+            <artifactId>commons-dbcp</artifactId>    
+            <version>1.4</version>    
+        </dependency>    
+        <!-- jstl标签类 -->    
+        <dependency>    
+            <groupId>jstl</groupId>    
+            <artifactId>jstl</artifactId>    
+            <version>1.2</version>    
+        </dependency>    
+        <!-- log start -->    
+        <dependency>    
+            <groupId>log4j</groupId>    
+            <artifactId>log4j</artifactId>    
+            <version>${log4j.version}</version>    
+        </dependency>    
+        <dependency>    
+            <groupId>org.slf4j</groupId>    
+            <artifactId>slf4j-api</artifactId>    
+            <version>${slf4j.version}</version>    
+        </dependency>    
+        <dependency>    
+            <groupId>org.slf4j</groupId>    
+            <artifactId>slf4j-log4j12</artifactId>    
+            <version>${slf4j.version}</version>    
+        </dependency>    
+        <!-- log END -->    
+        <!-- Json  -->    
+        <!-- 格式化对象，方便输出日志 -->    
+        <dependency>    
+            <groupId>com.alibaba</groupId>    
+            <artifactId>fastjson</artifactId>    
+            <version>1.2.6</version>    
+        </dependency>    
+        <dependency>    
+            <groupId>org.codehaus.jackson</groupId>    
+            <artifactId>jackson-mapper-asl</artifactId>    
+            <version>1.9.13</version>    
+        </dependency>    
+        <!-- 上传组件包 start -->    
+        <dependency>    
+            <groupId>commons-fileupload</groupId>    
+            <artifactId>commons-fileupload</artifactId>    
+            <version>1.3.1</version>    
+        </dependency>    
+        <dependency>    
+            <groupId>commons-io</groupId>    
+            <artifactId>commons-io</artifactId>    
+            <version>2.4</version>    
+        </dependency>    
+        <dependency>    
+            <groupId>commons-codec</groupId>    
+            <artifactId>commons-codec</artifactId>    
+            <version>1.10</version>    
+        </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>jquery</artifactId>
+            <version>3.0.0-alpha1</version>
+        </dependency>
+        <!-- mybatis分页插件依赖 -->
+		<dependency>
+		    <groupId>com.github.pagehelper</groupId>
+		    <artifactId>pagehelper</artifactId>
+		    <version>4.0.0</version>
+		</dependency>
+		<!-- 爬虫所需jar -->
+        <dependency>  
+            <groupId>commons-beanutils</groupId>  
+            <artifactId>commons-beanutils</artifactId>  
+            <version>1.8.3</version>  
+        </dependency>
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-httpclient</groupId>
+            <artifactId>commons-httpclient</artifactId>
+            <version>3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.5</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.2</version>
+        </dependency>
+        <dependency>
+		    <groupId>net.sf.ezmorph</groupId>
+		    <artifactId>ezmorph</artifactId>
+		    <version>1.0.3</version>
+		</dependency>
+		<!-- json-lib是需要区分jdk版本的，pom.xml中的配置应加上<classifier>标签，如用jdk15： -->
+        <dependency>
+            <groupId>net.sf.json-lib</groupId>
+            <artifactId>json-lib</artifactId>
+            <version>2.4</version>
+            <classifier>jdk15</classifier>
+        </dependency>
+      <!-- ehcache 相关依赖  -->
+      <dependency>
+          <groupId>net.sf.ehcache</groupId>
+          <artifactId>ehcache</artifactId>
+          <version>2.8.2</version>
+      </dependency>
+        
+  </dependencies>
+  
+  <build>
+    <finalName>xmind</finalName>
+
+    <resources>
+      <resource>
+          <directory>src/main/java</directory>
+          <includes>
+              <include>**/*.xml</include>
+          </includes>
+      </resource>
+    </resources>
+
+  </build>
+</project>

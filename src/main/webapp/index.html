@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>XMind模板之家</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="" />
+	<script type="application/x-javascript">
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!-- Custom Theme files -->
+	<link href="source/index/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+	<link href="source/index/css/style.css" type="text/css" rel="stylesheet" media="all">
+	<link href="source/index/css/font-awesome.css" rel="stylesheet">
+	<!-- font-awesome icons -->
+	<link rel="stylesheet" href="source/index/css/flexslider.css" type="text/css" media="screen" />
+	<!-- //Custom Theme files -->
+	<!-- js -->
+	<script src="source/index/js/jquery-2.2.3.min.js"></script>
+	<!-- //js -->
+	<!-- web-fonts -->
+	<link href="http://fonts.googleapis.com/css?family=Playball" rel="stylesheet">
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+	<!-- //web-fonts -->
+	<script>
+        function MouseOver(obj)
+        {
+            obj.style.opacity = 0.9;
+        }
+
+        function MouseOut(obj)
+        {
+            obj.style.opacity = 0.2;
+        }
+	</script>
+</head>
+<style type="text/css">
+body {height: 100%;width: auto;background: url(source/index/images/5.jpg) repeat-x;}
+#first-left-div {filter:alpha(Opacity=50);-moz-opacity:0.2;opacity: 0.2;}
+#first-right-div{filter:alpha(Opacity=50);-moz-opacity:0.2;opacity: 0.2;}
+</style>
+<body>
+		
+	<!-- Popular -->
+	<!-- news -->
+	<div id="news" class="w3ls-section services news" style="padding: 1em 0;">
+		<div class="container">
+			<h3 class="agileits-title" style="color:#ececec;margin-bottom:10px;">Which Style</h3>
+			<div class="news-agileinfo">
+				<div class="col-sm-4 news-w3lgrids" id="first-left-div" onmouseover="MouseOver(this)" onmouseout="MouseOut(this)" style="width:50%;" onclick="jump(1);">
+					<div class="news-gridtext">
+						<div class="news-w3img">
+							<img src="source/index/images/left-first.png" class="img-responsive zoom-img" alt="" />
+							<!--<img src="source/index/images/a9.jpg" class="img-responsive zoom-img" alt="" />-->
+						</div>
+						<div class="news-w3imgtext" style="padding: 1em 2.5em;">
+							<h4>Nature photography </h4>
+							<p>列表模式,更加适合详细信息预览,Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer gravida mauris non mi gravida, at sollicitudin. </p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-4 news-w3lgrids" id="first-right-div" onmouseover="MouseOver(this)" onmouseout="MouseOut(this)" style="width:50%;" onclick="jump(2);">
+					<div class="news-gridtext">
+						<div class="news-w3img">
+							<img src="source/index/images/right-first.png" class="img-responsive zoom-img" alt="" />
+							<!--<img src="source/index/images/a8.jpg" class="img-responsive zoom-img" alt="" />-->
+						</div>
+						<div class="news-w3imgtext" style="padding: 1em 2.5em;">
+							<h4>Fashion photography </h4>
+							<p>模块方式,更加美观,查看自由,Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer gravida mauris non mi gravida, at sollicitudin. </p>
+						</div>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<!-- //news -->
+	
+	<!-- Tooltip -->
+	<div class="tooltip-content">
+		<div class="modal fade features-modal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog modal-md">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title">passion</h4>
+					</div>
+					<div class="modal-body">
+						<img src="source/index/images/1.jpg" class="img-responsive" alt="image">
+						<p>Fusce et congue nibh, ut ullamcorper magna. Donec ac massa tincidunt, fringilla sapien vel, tempus massa. Vestibulum
+							felis leo, tincidunt sit amet tristique accumsan. In vitae dapibus metus. Donec nec massa non nulla mattis aliquam
+							egestas et mi.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+	function jump(num){
+		if(num==1){
+			window.location.href='news/content';
+		}else{
+			window.location.href='news/content-F';
+		}
+	}
+	</script>
+	<!-- //Tooltip -->
+	<script src="source/index/js/SmoothScroll.min.js"></script>
+	<!-- Numscroller -->
+	<script type="text/javascript" src="source/index/js/numscroller-1.0.js"></script>
+	<!-- //Numscroller -->
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="source/index/js/bootstrap.js"></script>
+</body>
+</html>
