@@ -599,9 +599,10 @@ public class XmindController {
 		//返回json转换
 		JSONObject json =JSONObject.fromObject(result);
 		//获取返回json
-		JSONObject links = (JSONObject) json.get("links");
+		//JSONObject links = (JSONObject) json.get("links");
 		//取出链接
-		String realurl = links.get("default").toString();
+		//String realurl = links.get("default").toString();
+		String realurl = json.get("downloadUrl")+"";
 		return realurl;
 	}
     
