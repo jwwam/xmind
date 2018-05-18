@@ -24,4 +24,6 @@ eclipse启动则不需要
 2017/12/21
 需要重新部署, 加入了一个异常捕获
 
+![](https://github.com/jwwam/xmind/blob/master/src/main/webapp/source/images/shareData.png)
+
 #联系QQ:824247231
