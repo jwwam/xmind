@@ -58,7 +58,7 @@ public class Algorithm {
 	public String getNews(){
 		lastTime = getLast().getCreated();
 		int s = 0;
-		int e = 15;
+		int e = 50;
 		StringBuffer sb = new StringBuffer();
 		sb.append("lang=ww");
 		sb.append("&start=" + s);
