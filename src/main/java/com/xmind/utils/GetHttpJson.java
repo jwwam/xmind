@@ -31,6 +31,7 @@ public class GetHttpJson {
             //connection.setRequestProperty("accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8");
             connection.setRequestProperty("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8");
             connection.setRequestProperty("Accept-Encoding", "gzip, deflate, br");
+			connection.setRequestProperty("Accept-Charset", "UTF-8");
             connection.setRequestProperty("Accept-Language", "zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2");
 			connection.setRequestProperty("Connection", "Keep-Alive");
 			//connection.setRequestProperty("connection", "Keep-Alive");
@@ -52,7 +53,7 @@ public class GetHttpJson {
                 System.out.println(key + "--->" + map.get(key));
             }*/
             // 定义 BufferedReader输入流来读取URL的响应
-            in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+            in = new BufferedReader(new InputStreamReader(connection.getInputStream(),"utf-8") );
             String line;
             while ((line = in.readLine()) != null) {
                 result += line;

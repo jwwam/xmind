@@ -66,11 +66,15 @@ public class Algorithm {
 		String result = "";
 		JSONArray maps = new JSONArray();
 		//String param = "lang=ww&start=383&end=10000";
-		String url = "https://www.xmind.net/share/api/maps";
+		//String url = "https://www.xmind.net/share/api/maps";
+		//2018/10/12使用发现官网接口变更为https://www.xmind.net/_api/share/maps
+		String url = "https://www.xmind.net/_api/share/maps";
 		try {
 			result = GetHttpJson.sendGet(url, sb.toString());
 			//获取所有导图对象
-			maps = (JSONArray) getNewsToJson(result).get("maps");
+			//maps = (JSONArray) getNewsToJson(result).get("maps");
+			//2018/10/12使用发现Key变更为mapList
+			maps = (JSONArray) getNewsToJson(result).get("mapList");
 		}catch(Exception Jsone){
 			System.out.println("本次返回数据异常!");
 			Jsone.printStackTrace();
@@ -85,7 +89,8 @@ public class Algorithm {
 			System.out.println("本次入库前库中最后一条数据发布时间："+lastTime);
 			if(time.getTime() > lastTime.getTime()){
 				setValue(ob);
-				setThumbnails(ob);
+				//2018/10/12使用发现已经没有thumbnails字段了
+				//setThumbnails(ob);
 				//xmind.set...
 			}else{ continue; }
 			
@@ -208,7 +213,9 @@ public class Algorithm {
 		xmind.setFeatured(ob.get("featured").toString());
 		xmind.setPreviewurl(ob.get("previewUrl").toString());
 		xmind.setThumbnailurl(ob.get("thumbnailUrl").toString());
-		xmind.setBackgroundColor(ob.get("background_color").toString());
+		//2018/10/12使用发现Key变更为backgroundColor
+		//xmind.setBackgroundColor(ob.get("background_color").toString());
+		xmind.setBackgroundColor(ob.get("backgroundColor").toString());
 		xmind.setIdname(ob.get("id").toString());
 		xmind.setCxm(ob.get("cxm").toString());
 		xmind.setDownloadable(ob.get("downloadable").toString());
